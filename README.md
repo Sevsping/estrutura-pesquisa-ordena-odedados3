@@ -53,6 +53,7 @@ O sistema desenvolvido permite:
 Compile o programa:
 
 ```bash
+cd src
 javac Main.java
 ```
 
