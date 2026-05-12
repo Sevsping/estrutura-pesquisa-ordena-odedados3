@@ -26,6 +26,9 @@ public class Main {
             vertices[i] = scanner.nextLine();
         }
 
+        System.out.println("\nUse os indices abaixo:");
+        exibirVertices();
+
         System.out.print("Digite a quantidade de arestas: ");
         int quantidadeArestas = scanner.nextInt();
 
@@ -39,11 +42,16 @@ public class Main {
             System.out.print("Informe o indice do segundo vertice (0 a " + (quantidadeVertices - 1) + "): ");
             int destino = scanner.nextInt();
 
+            if (origem == destino) {
+            System.out.println("Nao e permitido ligar um vertice a ele mesmo.");
+            i--;
+            continue;
+        }
+
             matrizAdjacencia[origem][destino] = 1;
             matrizAdjacencia[destino][origem] = 1;
         }
 
-        exibirVertices();
         exibirMatriz();
 
         boolean[] melhorCobertura = encontrarMenorCobertura();
